@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mama Villa | Book Now</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <div class="logo">
+          <h2>KLux Villa</h2>
+        </div>
+
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="villa.html">Villa</a>
+          <a href="booking.html" class="btn-nav active">Book Now</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Book Your Stay</h1>
+        <p>Fill the form below and we will confirm your booking.</p>
+      </div>
+    </section>
+
+    <!-- ================= BOOKING FORM ================= -->
+    <section class="section booking-section">
+      <div class="container">
+        <div class="booking-wrapper">
+          <!-- LEFT INFO -->
+          <div class="booking-info">
+            <h2>KLux Villa</h2>
+            <p>
+              Secure your luxury stay in Lonavla. Our team will contact you
+              shortly after you submit the booking request.
+            </p>
+
+            <ul class="features">
+              <li>✔ Instant Response</li>
+              <li>✔ Best Price Guarantee</li>
+              <li>✔ Safe & Secure Booking</li>
+              <li>✔ 24/7 Support</li>
+            </ul>
+
+            <div class="price-box">
+              <p class="price">Starting ₹6,999 / night</p>
+            </div>
+          </div>
+
+          <!-- RIGHT FORM -->
+          <div class="booking-form-box">
+            <form id="bookingForm">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+91 XXXXX XXXXX"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Check-in</label>
+                  <input type="date" name="checkin" required />
+                </div>
+
+                <div class="form-group">
+                  <label>Check-out</label>
+                  <input type="date" name="checkout" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Guests</label>
+                <select name="guests" required>
+                  <option value="">Select guests</option>
+                  <option>1-2 Guests</option>
+                  <option>3-5 Guests</option>
+                  <option>6-10 Guests</option>
+                  <option>10+ Guests</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Special Request</label>
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Any special requirements..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary btn-full">
+                Send Booking Request
+              </button>
+
+              <p class="form-note">
+                ⚡ This is a booking request. Final confirmation will be shared
+                by our team.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>KLux Villa</h3>
+          <p>Luxury villa stay in Lonavla for families and friends.</p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="villa.html">Villa</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <p>Lonavla, Maharashtra</p>
+          <p>Phone: +91 90111 12347</p>
+          <p>Email: KLuxvilla@email.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KLux Villa. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
