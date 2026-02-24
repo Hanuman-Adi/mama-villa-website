@@ -61,7 +61,7 @@ if (bookingForm) {
       })
       .then(() => {
         alert(
-          "✅ Booking request sent successfully! Mama will receive an email.",
+          "✅ Booking request sent successfully! KLuxvilla will receive an email.",
         );
         bookingForm.reset();
       })

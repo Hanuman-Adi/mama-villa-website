@@ -420,3 +420,27 @@ ul {
   transform: scale(1.08);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
+
+.btn-transition {
+  transition: all 0.3s ease;
+}
+
+.btn-transition:hover {
+  transform: translateY(-2px);
+  background: #005ed6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Slide-in animation for container */
+.contact-form-box {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.8s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
