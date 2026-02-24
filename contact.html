@@ -13,6 +13,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script>
+      emailjs.init("-Dlo0kUtlHPadmuQf"); // Your EmailJS User ID
+    </script>
   </head>
 
   <body>
@@ -46,9 +52,10 @@
       </div>
     </section>
 
-    <!-- ================= CONTACT INFO ================= -->
-    <section class="section contact-section">
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="section contact-section" id="contact">
       <div class="container contact-grid">
+        <!-- CONTACT INFO -->
         <div class="contact-info">
           <h2>Get in Touch</h2>
           <p>
@@ -58,7 +65,7 @@
 
           <div class="contact-item">
             <h4>📍 Location</h4>
-            <p>A/P, Aundhe Rd, Lonavala, Maharashtra 410401</p>
+            <p>A/P, Aundhe Rd, Lonavla, Maharashtra 410401</p>
           </div>
 
           <div class="contact-item">
@@ -77,20 +84,49 @@
           </div>
         </div>
 
-        <!-- QUICK ACTION CARD -->
-        <div class="contact-cta-card">
-          <h3>Quick Booking</h3>
-          <p>
-            For fastest response, call us directly or send a booking request.
-          </p>
+        <!-- CONTACT FORM -->
+        <div class="contact-form-box">
+          <h3>Send Us a Message</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
 
-          <a href="tel:+91901112347" class="btn-primary btn-full"
-            >📞 Call Now</a
-          >
-          <br /><br />
-          <a href="booking.html" class="btn-secondary btn-full"
-            >Book via Form</a
-          >
+            <div class="form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" />
+            </div>
+
+            <div class="form-group">
+              <label>Message</label>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Type your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </section>
@@ -99,7 +135,6 @@
     <section class="section">
       <div class="container">
         <h2 class="section-title">Find Us on Map</h2>
-
         <div class="map-wrapper">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4486.991780018795!2d73.44170007588174!3d18.730323182404415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be801071633977d%3A0xfa0a32030b0e445a!2sKedari%20Villa!5e1!3m2!1sen!2sin!4v1771918855914!5m2!1sen!2sin"
@@ -145,7 +180,7 @@
       </div>
     </footer>
 
-    <!-- JS -->
+    <!-- ================= JS ================= -->
     <script src="js/script.js"></script>
   </body>
 </html>

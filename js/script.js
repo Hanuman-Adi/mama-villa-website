@@ -8,6 +8,17 @@ if (menuToggle && navLinks) {
   });
 }
 
+/* ================= SMOOTH SCROLL ================= */
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
 /* ================= DATE VALIDATION ================= */
 function validateDates(checkin, checkout) {
   if (!checkin || !checkout) return true;
@@ -19,9 +30,11 @@ function validateDates(checkin, checkout) {
     alert("Check-out date must be after check-in date.");
     return false;
   }
-
   return true;
 }
+
+/* ================= EMAILJS INITIALIZATION ================= */
+emailjs.init("-Dlo0kUtlHPadmuQf"); // Your EmailJS User ID
 
 /* ================= BOOKING FORM ================= */
 const bookingForm = document.getElementById("bookingForm");
@@ -34,28 +47,28 @@ if (bookingForm) {
     const checkin = formData.get("checkin");
     const checkout = formData.get("checkout");
 
-    // Date validation
     if (!validateDates(checkin, checkout)) return;
 
-    // ✅ EMAILJS INTEGRATION (ENABLE LATER)
-    // emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-    //   name: formData.get("name"),
-    //   phone: formData.get("phone"),
-    //   email: formData.get("email"),
-    //   checkin: checkin,
-    //   checkout: checkout,
-    //   guests: formData.get("guests"),
-    //   message: formData.get("message"),
-    // }).then(() => {
-    //   alert("Booking request sent successfully!");
-    //   bookingForm.reset();
-    // }).catch(() => {
-    //   alert("Failed to send booking. Try again.");
-    // });
-
-    // TEMP SUCCESS (until EmailJS connected)
-    alert("Booking request submitted! We will contact you soon.");
-    bookingForm.reset();
+    emailjs
+      .send("service_bugwv5m", "template_2ddfret", {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        email: formData.get("email"),
+        checkin: checkin,
+        checkout: checkout,
+        guests: formData.get("guests"),
+        message: formData.get("message"),
+      })
+      .then(() => {
+        alert(
+          "✅ Booking request sent successfully! Mama will receive an email.",
+        );
+        bookingForm.reset();
+      })
+      .catch((error) => {
+        alert("❌ Failed to send booking. Try again.");
+        console.log(error);
+      });
   });
 }
 
@@ -68,21 +81,20 @@ if (contactForm) {
 
     const formData = new FormData(contactForm);
 
-    // ✅ EMAILJS INTEGRATION (ENABLE LATER)
-    // emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-    //   name: formData.get("name"),
-    //   email: formData.get("email"),
-    //   phone: formData.get("phone"),
-    //   message: formData.get("message"),
-    // }).then(() => {
-    //   alert("Message sent successfully!");
-    //   contactForm.reset();
-    // }).catch(() => {
-    //   alert("Failed to send message.");
-    // });
-
-    // TEMP SUCCESS
-    alert("Message sent! We will get back to you.");
-    contactForm.reset();
+    emailjs
+      .send("service_bugwv5m", "template_2ddfret", {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        message: formData.get("message"),
+      })
+      .then(() => {
+        alert("✅ Message sent successfully! We will get back to you.");
+        contactForm.reset();
+      })
+      .catch((error) => {
+        alert("❌ Failed to send message. Try again.");
+        console.log(error);
+      });
   });
 }

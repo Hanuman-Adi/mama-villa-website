@@ -13,6 +13,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script>
+      emailjs.init("-Dlo0kUtlHPadmuQf"); // Your correct EmailJS User ID
+    </script>
   </head>
 
   <body>
@@ -47,7 +53,7 @@
     </section>
 
     <!-- ================= BOOKING FORM ================= -->
-    <section class="section booking-section">
+    <section class="section booking-section" id="booking">
       <div class="container">
         <div class="booking-wrapper">
           <!-- LEFT INFO -->
@@ -180,7 +186,7 @@
       </div>
     </footer>
 
-    <!-- JS -->
+    <!-- ================= JS ================= -->
     <script src="js/script.js"></script>
   </body>
 </html>
